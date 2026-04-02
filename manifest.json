@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "OPIX Color Picker",
+  "version": "1.0.0",
+  "description": "Quick access to OPIX brand colors — click to copy hex, RGB, or CMYK values.",
+  "permissions": ["clipboardWrite"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

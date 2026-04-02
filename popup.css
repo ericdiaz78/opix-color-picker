@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 320px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  padding: 0;
+}
+
+.header {
+  background: #28301B;
+  padding: 16px 20px;
+  text-align: center;
+  border-bottom: 2px solid #729F99;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #AA8639;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: #729F99;
+  margin-top: 2px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.colors {
+  padding: 12px;
+}
+
+.color-card {
+  background: #16213e;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border: 1px solid #2a2a4a;
+  transition: border-color 0.2s;
+}
+
+.color-card:hover {
+  border-color: #729F99;
+}
+
+.color-card:last-child {
+  margin-bottom: 0;
+}
+
+.swatch-row {
+  display: flex;
+  align-items: stretch;
+}
+
+.swatch {
+  width: 80px;
+  min-height: 80px;
+  flex-shrink: 0;
+  cursor: pointer;
+  position: relative;
+  transition: opacity 0.15s;
+}
+
+.swatch:hover {
+  opacity: 0.85;
+}
+
+.swatch::after {
+  content: '⧉';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: rgba(255,255,255,0.6);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.swatch:hover::after {
+  opacity: 1;
+}
+
+.color-info {
+  flex: 1;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.color-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin-bottom: 2px;
+}
+
+.color-value {
+  font-size: 11px;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+  font-family: 'SF Mono', 'Consolas', monospace;
+  display: inline-block;
+  width: fit-content;
+}
+
+.color-value:hover {
+  background: #2a2a4a;
+  color: #e0e0e0;
+}
+
+.color-value .label {
+  color: #64748b;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-right: 4px;
+}
+
+.toast {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #28301B;
+  color: #729F99;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+  border: 1px solid #729F99;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 10px;
+  color: #4a5568;
+  border-top: 1px solid #2a2a4a;
+}
