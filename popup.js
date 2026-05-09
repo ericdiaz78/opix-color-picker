@@ -48,14 +48,29 @@ const FAMILIES = [
   }
 ];
 
+// Accent color for each family's section bar (avoids using too-dark or too-light brand swatches)
+const FAMILY_ACCENTS = {
+  "OPIX GREEN":      "#729F99",
+  "OPIX TAN":        "#AA8639",
+  "OPIX DARK GREEN": "#869C63",
+  "OPIX GRAY":       "#896C6C"
+};
+
 function renderColors() {
   const container = document.getElementById("colors");
 
   FAMILIES.forEach(group => {
+    const section = document.createElement("section");
+    section.className = "family-section";
+    section.style.borderLeftColor = FAMILY_ACCENTS[group.family] || "#729F99";
+
     const header = document.createElement("div");
     header.className = "family-header";
     header.textContent = group.family;
-    container.appendChild(header);
+    section.appendChild(header);
+
+    const grid = document.createElement("div");
+    grid.className = "family-cards";
 
     group.colors.forEach(color => {
       const card = document.createElement("div");
@@ -72,8 +87,11 @@ function renderColors() {
           </div>
         </div>
       `;
-      container.appendChild(card);
+      grid.appendChild(card);
     });
+
+    section.appendChild(grid);
+    container.appendChild(section);
   });
 }
 
