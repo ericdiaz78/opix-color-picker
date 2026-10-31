@@ -170,6 +170,20 @@ body {
   color: #e0e0e0;
 }
 
+.hex-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.color-value.no-hash {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+  border: 1px solid #2a2a4a;
+}
+
 .color-value .label {
   color: #64748b;
   font-size: 9px;

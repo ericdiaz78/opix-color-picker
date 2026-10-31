@@ -81,7 +81,10 @@ function renderColors() {
           <div class="color-info">
             <div class="color-name">${color.name}</div>
             <div class="color-description">${color.description}</div>
-            <div class="color-value" data-copy="${color.hex}"><span class="label">HEX</span>${color.hex}</div>
+            <div class="hex-row">
+              <div class="color-value" data-copy="${color.hex}"><span class="label">HEX</span>${color.hex}</div>
+              <div class="color-value no-hash" data-copy="${color.hex.slice(1)}" title="Copy ${color.hex.slice(1)} (no #)">no #</div>
+            </div>
             <div class="color-value" data-copy="rgb(${color.rgb})"><span class="label">RGB</span>${color.rgb}</div>
             <div class="color-value" data-copy="cmyk(${color.cmyk})"><span class="label">CMYK</span>${color.cmyk}</div>
           </div>
